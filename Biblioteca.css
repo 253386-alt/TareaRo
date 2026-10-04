@@ -1,0 +1,61 @@
+/* Estilos extra de la Biblioteca (se usa junto con app.css) */
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 10px 0 18px;
+  border-radius: 14px;
+  background: var(--glass);
+  border: 1px solid var(--line);
+}
+
+.icon-btn--small { width: 32px; height: 32px; font-size: 14px; }
+
+.section-title {
+  margin: 4px 0 12px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Cuadrícula de libros */
+.books {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.book {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  display: block;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--glass);
+  border: 1px solid var(--line);
+  transition: transform .2s, background .2s;
+}
+.book:hover { transform: translateY(-4px); background: var(--glass-strong); }
+
+.book__bar {
+  position: absolute;
+  top: 8px; left: 12px; right: 12px;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, .35);
+}
+
+.book__cover {
+  position: absolute;
+  inset: 20px 14px 14px;
+  width: calc(100% - 28px);
+  height: calc(100% - 34px);
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+}
+
+@media (max-width: 760px) {
+  .books { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+}
